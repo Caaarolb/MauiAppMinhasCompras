@@ -1,9 +1,12 @@
-namespace MauiAppMinhasCompras.Views;
+using Microsoft.Maui.Controls;
 
-public partial class ListaProduto : ContentView
+namespace MauiAppMinhasCompras.Views
 {
-	public ListaProduto()
-	{
-		InitializeComponent();
-	}
+    public partial class ListaProduto : ContentPage
+    {
+        public ListaProduto()
+        {
+            InitializeComponent();
+        }
+    }
 }
