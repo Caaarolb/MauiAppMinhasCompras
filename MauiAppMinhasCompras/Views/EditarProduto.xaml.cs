@@ -1,6 +1,6 @@
 namespace MauiAppMinhasCompras.Views;
 
-public partial class EditarProduto : ContentView
+public partial class EditarProduto : ContentPage
 {
 	public EditarProduto()
 	{
