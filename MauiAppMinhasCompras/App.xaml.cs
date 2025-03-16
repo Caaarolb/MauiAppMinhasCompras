@@ -1,37 +1,31 @@
 ﻿using MauiAppMinhasCompras.Helpers;
 
-namespace MauiAppMinhasCompras
+namespace MauiAppMinhasCompras;
+
+public partial class App : Application
 {
-    public partial class App : Application
+    private static SQLiteDatabaseHelper _db;
+
+    public SQLiteDatabaseHelper Db
     {
-        static SQLiteDatabaseHelper _db;
-
-        public SQLiteDatabaseHelper Db
+        get
         {
-            get
-            { if (_db == null)
-                {
-                    string path = Path.Combine(
-                        Environment.GetFolderPath(
-                            Environment.SpecialFolder.LocalApplicationData),
-                        "banco_sqlite_compras.db3");
+            if (_db == null)
+            {
+                string path = Path.Combine(
+                    Environment.GetFolderPath(Environment.SpecialFolder.LocalApplicationData),
+                    "banco_sqlite_compras.db3");
 
-                    _db = new SQLiteDatabaseHelper(path);
-                }
-                return _db;
+                _db = new SQLiteDatabaseHelper(path);
             }
-        }
-        public App()
-        {
-            InitializeComponent();
-
-            // MainPage = new AppShell();
-
-            MainPage = new NavigationPage(new Views.ListaProduto());
+            return _db;
         }
     }
 
+    public App()
+    {
+        InitializeComponent();
 
-
+        MainPage = new NavigationPage(new Views.ListaProduto());
     }
-
+}
